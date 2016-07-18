@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.views.generic.base import TemplateView
 
-from . import mainviews
+from . import views
 
 urlpatterns = [
-    url(r'^$', mainviews.main_index_view, name='index'),
+    url(r'^$', TemplateView.as_view(template_name='bjsvc/index.html'), name='index'),
     url(r'^admin/', admin.site.urls),
 ]
